@@ -1,0 +1,41 @@
+{
+  "name": "blog",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "description": "vuepress",
+  "keywords": [
+    "vuepress"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaijiaLin/blog"
+  },
+  "scripts": {
+    "docs:dev": "npx vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "gh-pages -d docs/.vuepress/dist",
+    "deploy:build": "npm run docs:build && gh-pages -d docs/.vuepress/dist",
+    "docs:deploy": "npm run docs:build && git add . && git commit -m 'deploy' && git push origin master && npm run deploy",
+    "blog:deploy": "git add . && git commit -m 'deploy' && git push origin master && npm run deploy"
+  },
+  "author": "kaijiaLin",
+  "license": "MIT",
+  "devDependencies": {
+    "Prism": "^2.0.0",
+    "gh-pages": "^2.0.0",
+    "mathsass": "^0.10.1",
+    "node-sass": "^4.9.3",
+    "prismjs": "^1.16.0",
+    "sass-loader": "^7.1.0",
+    "scss-loader": "^0.0.1",
+    "vuepress": "^0.14.4"
+  },
+  "dependencies": {
+    "gitalk": "^1.5.0",
+    "markdown-it-imsize": "2.0.1",
+    "markdown-it-include": "^1.0.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "vuepress-theme-yubisaki": "^3.1.9"
+  }
+}
